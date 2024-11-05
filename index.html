@@ -155,11 +155,11 @@
                         <br>A comida chegou quente e <br>
                         muito saborosa!"
 
-                        <spam class="card-case-name">
+                        <span class="card-case-name">
 
                             <b>Steve - Minecraft</b>
 
-                        </spam>
+                        </span>
 
                     </div>
 
@@ -283,43 +283,47 @@
 
                 </div>
 
-                <div class="container-menu">
+                <div class="col-12 container-menu">
 
-                    <a class="btn-white btn-sm mr-3">
+                    <a id="menu-burgers" class="btn btn-white btn-sm mr-3" onclick='cardapio.metodos.obterItensCardapio("burgers")'>
 
                         <i class="fas fa-hamburger"></i>&nbsp;Burguer
 
                     </a>
 
-                    <a class="btn-white btn-sm mr-3">
+                    <a id="menu-pizzas" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('pizzas')">
 
                         <i class="fas fa-pizza-slice"></i>&nbsp;Pizzas
 
                     </a>
 
-                    <a class="btn-white btn-sm mr-3">
+                    <a id="menu-churrasco" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('churrasco')">
 
                         <i class="fas fa-drumstick-bite"></i>&nbsp;Churrasco
 
                     </a>
 
-                    <a class="btn-white btn-sm mr-3">
+                    <a id="menu-steaks" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('steaks')">
 
                         <i class="fas fa-bacon"></i>&nbsp;Steaks
 
                     </a>
 
-                    <a class="btn-white btn-sm mr-3">
+                    <a id="menu-bebidas" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('bebidas')">
 
                         <i class="fas fa-cocktail"></i>&nbsp;Bebidas
 
                     </a>
 
-                    <a class="btn-white btn-sm mr-3">
+                    <a id="menu-sobremesas" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('sobremesas')">
 
                         <i class="fas fa-ice-cream"></i>&nbsp;Sorvete
 
                     </a>
+
+                    
+
+                        
 
                 </div>
 
@@ -327,47 +331,14 @@
 
                     <div class="row" id="itensCardapio">
 
-                        <div class="col-3 mt-4">
-
-                            <div class="card card-item">
-
-                                <div class="img-produto">
-
-                                    <img
-                                        src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg">
-
-                                </div>
-
-                                <p class="title-produto text-center mt-4">
-
-                                    <b>X-Salada</b>
-
-                                </p>
-
-                                <p class="price-produto text-center">
-
-                                    <b>R$: 20,20</b>
-
-                                </p>
-
-                                <div class="add-carrinho">
-
-                                    <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                                    <span class="btn-numero-itens">0</span>
-                                    <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                                    <span class="btn btn-add"><i class="fas fa-shopping-bag"></i></span>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
+                       
                     </div>
 
-                    <div class="col-12 text-center mt-4">
+                    <div class="col-12 text-center mt-4" >
 
-                        <a class="btn btn-white btn-sm">Ver mais</a>
+                        <a id="btnVerMais" name="btnVerMais" onclick='cardapio.metodos.verMais()' class="btn btn-white btn-sm">Ver mais</a>
+
+                        
 
                     </div>
 
@@ -1234,6 +1205,8 @@
     <script type="text/javascript" src="./js/popper.min.js"></script>
 
     <script type="text/javascript" src="./js/dados.js"></script>
+    
+    <script type="text/javascript" src="./js/app.js"></script>
 
 </body>
 
