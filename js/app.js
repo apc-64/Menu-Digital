@@ -63,21 +63,21 @@ cardapio.metodos = {
     },
 
     diminuirQuantidade: (id) =>{
-        let qntdAtual = parseInt($("#qntd-carrinho-"+id).text());
+        let qntdAtual = parseInt($("#qntd-"+id).text());
         if(qntdAtual > 0){
-            $("#qntd-carrinho-"+id).text(qntdAtual - 1);
+            $("#qntd-"+id).text(qntdAtual - 1);
 
         }
     },
 
     aumentarQuantidade: (id) =>{
-        let qntdAtual = parseInt($("#qntd-carrinho-"+id).text());
+        let qntdAtual = parseInt($("#qntd-"+id).text());
         
-        $("#qntd-carrinho-"+id).text(qntdAtual + 1);
+        $("#qntd-"+id).text(qntdAtual + 1);
     },
 
     adicionarCarrinho: (id) => {
-        let qntdAtual = parseInt($("#qntd-carrinho-"+id).text());
+        let qntdAtual = parseInt($("#qntd-"+id).text());
         
 
         //grep cria um outro vetor, com elementos que atendam suas condições, sem alterar o original. RETORNA OBJETOS
@@ -93,12 +93,12 @@ cardapio.metodos = {
             let item = $.grep(filtro, (e, i) => {return e.id == id});
 
 
-            if(item.lenght > 0){
+            if(item.length > 0){
 
                 //validar se este item já existe
                 let existe = $.grep(MEU_CARRINHO, (e, i) => {return e.id == id})
     
-                if(existe.lenght > 0){
+                if(existe.length > 0){
                     let objIndex = MEU_CARRINHO.findIndex((obj => obj.id == id));
                     MEU_CARRINHO[objIndex].qntd = MEU_CARRINHO[objIndex].qntd + qntdAtual;
                 }
@@ -135,7 +135,15 @@ cardapio.metodos = {
 
         $(".badge-total-carrinho").html(total);
 
+    },
+
+    mensagem: (texto, cor='red', tempo = 3500) =>{
+        
+        $("#container-mensagem").append(texto);
+
     }
+
+
 }
 
 cardapio.templates = {
@@ -154,7 +162,7 @@ cardapio.templates = {
 
         <div class="add-carrinho">
             <span class="btn-menos" onclick="cardapio.metodos.diminuirQuantidade('\${id}')"><i class="fas fa-minus"></i></span>
-            <span class="btn-numero-itens" id="qntd-carrinho-\${id}">0</span>
+            <span class="btn-numero-itens" id="qntd-\${id}">0</span>
             <span class="btn-mais" onclick="cardapio.metodos.aumentarQuantidade('\${id}')"><i class="fas fa-plus"></i></span>
             <span class="btn btn-add" onclick="cardapio.metodos.adicionarCarrinho('\${id}')"><i class="fa fa-shopping-bag"></i></span>
         </div>
