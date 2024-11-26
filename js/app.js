@@ -5,6 +5,8 @@ $(document).ready(function () {
 
 var cardapio = {};
 var MEU_CARRINHO = [];
+var VALOR_CARRINHO = 0;
+var VALOR_ENTREGA = 10.0;
 
 
 cardapio.eventos = {
@@ -123,6 +125,43 @@ cardapio.metodos = {
 
     },
 
+    // diminuir quantidade do item no carrinho (modal)
+    diminuirQuantidadeCarrinho: (id) => {
+        
+        let qntdAtual = parseInt($("#qntd-carrinho-" + id).text());
+
+        if (qntdAtual > 1) {
+            $("#qntd-carrinho-" + id).text(qntdAtual - 1);
+            cardapio.metodos.atualizarCarrinho(id, qntdAtual - 1);
+        }
+        else {
+            cardapio.metodos.removerItemCarrinho(id)
+        }
+
+    },
+
+    // aumentar quantidade do item no carrinho (modal)
+    aumentarQuantidadeCarrinho: (id) => {
+
+        let qntdAtual = parseInt($("#qntd-carrinho-" + id).text());
+        $("#qntd-carrinho-" + id).text(qntdAtual + 1);
+        cardapio.metodos.atualizarCarrinho(id, qntdAtual + 1);
+
+    },
+
+    // remover item do carrinho (modal)
+    removerItemCarrinho: (id) => {
+
+        MEU_CARRINHO = $.grep(MEU_CARRINHO, (e, i) => { return e.id != id });
+        cardapio.metodos.carregarCarrinho();
+
+        // atualiza o botão carrinho com a quantidade atualizada
+        cardapio.metodos.atualizarBadgeTotal();
+
+        //atualiza os valores (R$) totais do carrinho
+        cardapio.metodos.carregarValores();
+    },
+
     mensagem: (texto, cor = 'red', tempo = 3500) => {
 
         let id = Math.floor(Date.now() * Math.random()).toString();
@@ -163,11 +202,12 @@ cardapio.metodos = {
 
     },
 
-   // abrir a modal de carrinho
-   abrirCarrinho: (abrir) => {
+    // abrir a modal de carrinho
+    abrirCarrinho: (abrir) => {
 
         if (abrir) {
             $("#modalCarrinho").removeClass('hidden');
+            cardapio.metodos.carregarCarrinho();
 
         }
         else {
@@ -176,7 +216,76 @@ cardapio.metodos = {
 
     },
 
-    // altera os texto e exibe os botões das etapas
+    //carregar lista de  itens no carrinho
+    carregarCarrinho: () => {
+        cardapio.metodos.carregarEtapa(1)
+
+        if (MEU_CARRINHO.length > 0) {
+            
+
+            $("#itensCarrinho").html('');
+
+            $.each(MEU_CARRINHO, (i, e) => {
+
+                let temp = cardapio.templates.itemCarrinho.replace(/\${img}/g, e.img)
+                .replace(/\${nome}/g, e.name)
+                .replace(/\${preco}/g, e.price.toFixed(2).replace('.', ','))
+                .replace(/\${id}/g, e.id)
+                .replace(/\${qntd}/g, e.qntd)
+
+                $("#itensCarrinho").append(temp);
+
+                // último item
+                if ((i + 1) == MEU_CARRINHO.length) {
+                    cardapio.metodos.carregarValores();
+				}
+
+            })
+            
+        } else {
+            $("#itensCarrinho").html('<p class="carrinho-vazio"><i class="fa fa-shopping-bag"></i> Seu carrinho está vazio.</p>');
+            
+        }
+    },
+
+    // atualiza o carrinho com a quantidade atual
+    atualizarCarrinho: (id, qntd) => {
+
+        let objIndex = MEU_CARRINHO.findIndex((obj => obj.id == id));
+        MEU_CARRINHO[objIndex].qntd = qntd;
+
+        // atualiza o botão carrinho com a quantidade atualizada
+        cardapio.metodos.atualizarBadgeTotal();
+
+        //atualiza os valores (R$) totais do carrinho
+        cardapio.metodos.carregarValores();
+
+    },
+   
+    // carrega os valores de SubTotal, Entrega e Total
+    carregarValores: () => {
+
+        VALOR_CARRINHO = 0;
+
+        $("#lblSubTotal").text('R$ 0,00');
+        $("#lblValorEntrega").text('+ R$ 0,00');
+        $("#lblValorTotal").text('R$ 0,00');
+
+        $.each(MEU_CARRINHO, (i, e) => {
+
+            VALOR_CARRINHO += parseFloat(e.price * e.qntd);
+
+            if ((i + 1) == MEU_CARRINHO.length) {
+                $("#lblSubTotal").text(`R$ ${VALOR_CARRINHO.toFixed(2).replace('.', ',')}`);
+                $("#lblValorEntrega").text(`+ R$ ${VALOR_ENTREGA.toFixed(2).replace('.', ',')}`);
+                $("#lblValorTotal").text(`R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.', ',')}`);
+            }
+
+        })
+
+    },
+
+    // altera os texto e exibe as etapas
     carregarEtapa: (etapa) => {
 
         if (etapa == 1) {
@@ -193,7 +302,7 @@ cardapio.metodos = {
             $("#btnEtapaResumo").addClass('hidden');
             $("#btnVoltar").addClass('hidden');
         }
-        
+
         if (etapa == 2) {
             $("#lblTituloEtapa").text('Endereço de entrega:');
             $("#itensCarrinho").addClass('hidden');
@@ -234,6 +343,18 @@ cardapio.metodos = {
         let etapa = $(".etapa.active").length;
         cardapio.metodos.carregarEtapa(etapa - 1);
 
+    },
+
+    // carregar a etapa enderecos
+    carregarEndereco: () => {
+
+        if (MEU_CARRINHO.length <= 0) {
+            cardapio.metodos.mensagem('Seu carrinho está vazio.')
+            return;
+        } 
+
+        cardapio.metodos.carregarEtapa(2);
+
     }
 
 }
@@ -259,6 +380,44 @@ cardapio.templates = {
             <span class="btn btn-add" onclick="cardapio.metodos.adicionarCarrinho('\${id}')"><i class="fa fa-shopping-bag"></i></span>
         </div>
         </div>
+    </div>`,
+
+
+    itemCarrinho: `
+    <div class="col-12 item-carrinho">
+
+        <div class="img-produto">
+
+            <img src="\${img}">
+
+        </div>
+
+        <div class="dados-produto">
+
+            <p class="title-produto"><b>\${nome}</b></p>
+
+            <p class="price-produto"><b>R$ \${preco}</b></p>
+
+        </div>
+
+        <div class="add-carrinho">
+
+            <span class="btn-menos" onclick="cardapio.metodos.diminuirQuantidadeCarrinho('\${id}')"><i class="fas fa-minus"></i></span>
+
+            <span class="btn-numero-itens" id="qntd-carrinho-\${id}">\${qntd}</span>
+
+            <span class="btn-mais" onclick="cardapio.metodos.aumentarQuantidadeCarrinho('\${id}')"><i class="fas fa-plus"></i></span>
+
+            <span class="btn btn-remove" onclick="cardapio.metodos.removerItemCarrinho('\${id}')"><i class="fa fa-times"></i></span>
+
+        </div>
+
+
+
     </div>`
+
+
+
+
 
 }
