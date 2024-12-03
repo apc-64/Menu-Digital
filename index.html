@@ -700,7 +700,7 @@
 
                                 <input id="txtCEP" type="text" class="form-control" />
 
-                                <a class="btn btn-yellow btn-sm">
+                                <a class="btn btn-yellow btn-sm" onclick="cardapio.metodos.buscarCep()">
 
                                     <i class="fa fa-search"></i>
 
@@ -744,7 +744,7 @@
 
                                 <label>Número:</label>
 
-                                <input id="txtNum" type="text" class="form-control" />
+                                <input id="txtNumero" type="text" class="form-control" />
 
                             </div>
 
@@ -756,7 +756,7 @@
 
                                 <label>Cidade:</label>
 
-                                <input id="txtEndereco" type="text" class="form-control" />
+                                <input id="txtCidade" type="text" class="form-control" />
 
                             </div>
 
@@ -768,7 +768,7 @@
 
                                 <label>Complemento:</label>
 
-                                <input id="txtBairro" type="text" class="form-control" />
+                                <input id="txtComplemento" type="text" class="form-control" />
 
                             </div>
 
@@ -780,7 +780,7 @@
 
                                 <label>UF:</label>
 
-                                <select  class="form-control" id="">
+                                <select  class="form-control" id="ddlUf">
                                     <option value="">--</option>
                                     <option value="AC">AC</option>
                                     <option value="AL">AL</option>
@@ -822,7 +822,7 @@
 
                 </div>
 
-                <div id="resumoCarrinho" class="row mr-0 ml-0 hidden">
+                <div id="resumoCarrinho"  class="row mr-0 ml-0 hidden">
                         
                     <div class="col-12">
 
@@ -838,7 +838,7 @@
 
                         <div class="row" id="listaItensResumo">
 
-                            <div class="col-12 item-carrinho resumo">
+                            <!-- <div class="col-12 item-carrinho resumo">
 
                                 <div class="img-produto-resumo">
 
@@ -866,7 +866,7 @@
                                     x <b>3</b>
                                 </p>
 
-                            </div>
+                            </div> -->
 
                             
 
@@ -893,11 +893,11 @@
                         <div class="dados-produto">
                             <p class="dados-produto">
                                 <p class="texto-endereco">
-                                    <b id="resumoEndereco">Rua dos Bobos, 0, bairro Itamaraty</b>
+                                    <b id="resumoEndereco"></b>
                                 </p>
                             
                                 <p class="cidade-endereco" id="cidadeEndereco">
-                                    São Paulo - SP CEP 00000-000
+                                    
                                 </p>
                             </p>
                         </div>
@@ -945,9 +945,9 @@
 
                 <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-yellow float-right" id="btnEtapaPedido">Continuar</a>
 
-                <a onclick="cardapio.metodos.carregarEtapa(3)"class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">Revisar Pedido</a>
+                <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">Revisar Pedido</a>
 
-                <a class="btn btn-yellow float-right hidden" id="btnEtapaResumo">EnviarPedido</a>
+                <a class="btn btn-yellow float-right hidden"  id="btnEtapaResumo">EnviarPedido</a>
 
                 <a onclick="cardapio.metodos.voltarEtapa()" class="btn btn-white float-right mr-3 hidden" id="btnVoltar">Voltar</a>
 
