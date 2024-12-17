@@ -8,7 +8,7 @@ var MEU_CARRINHO = [];
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 10.0;
 var MEU_ENDERECO = [];
-var CELULAR_EMPRESA = "556699572304";
+var CELULAR_EMPRESA = "55900000000";
 
 cardapio.eventos = {
 
@@ -524,7 +524,6 @@ cardapio.metodos = {
         }
 
     }
-
 }
 
 cardapio.templates = {
