@@ -8,7 +8,7 @@ var MEU_CARRINHO = [];
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 10.0;
 var MEU_ENDERECO = [];
-var CELULAR_EMPRESA = "0000000";
+var CELULAR_EMPRESA = "00000000";
 
 cardapio.eventos = {
 
@@ -599,7 +599,7 @@ cardapio.templates = {
 
 
     itemCarrinho: `
-    <div class="col-12 item-carrinho">
+    <div class="col-12 item-carrinho animated fadeIn">
 
         <div class="img-produto">
 
@@ -632,7 +632,7 @@ cardapio.templates = {
     </div>`,
 
     itemResumo: `
-    <div class="col-12 item-carrinho resumo">
+    <div class="col-12 item-carrinho resumo animated fadeIn">
         <div class="img-produto-resumo">
             <img src="\${img}" />
         </div>
