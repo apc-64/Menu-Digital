@@ -5,7 +5,7 @@
 <head>
 
     <meta charset="UTF-8" />
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Restaurante - Bem vindo</title>
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./css/fontawesome.css">
 
     <link rel="stylesheet" href="./css/main.css">
-
+    <link rel="stylesheet" href="./css/responsivo.css">
     <link rel="stylesheet" href="./css/animate.css">
 
 </head>
@@ -39,7 +39,7 @@
 
             <nav class="navbar navbar-expand lg pl-0 pr-0 col-one">
 
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand wow fadeIn" href="#">
 
                     <img src="./img/logo.png" width="160" class="img-logo" />
 
@@ -57,7 +57,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-                    <ul class="navbar-nav ml-auto mr-auto">
+                    <ul class="navbar-nav ml-auto mr-auto wow fadeIn">
 
                         <li class="nav-item"><a href="#reservas" class="nav-link"><b>Reservas</b></a></li>
 
@@ -69,7 +69,7 @@
 
                     </ul>
 
-                    <a class="btn btn-white btn-icon" onclick="cardapio.metodos.abrirCarrinho(true)">
+                    <a class="btn btn-white btn-icon wow fadeIn" onclick="cardapio.metodos.abrirCarrinho(true)">
                        
                         Meu carrinho
 
@@ -99,23 +99,17 @@
 
                     <div class="d-flex text-banner">
 
-                        <h1><b>Escolha a sua comida <b class="color-primary">favorita.</b></b></h1>
-                        <p>Aproveite nosso cardápio! Escolha o que desejar e receba em sua casa de forma rápida e
+                        <h1 class="wow fadeInLeft"><b>Escolha a sua comida <b class="color-primary">favorita.</b></b></h1>
+                        <p class="wow fadeInLeft delay-02s">Aproveite nosso cardápio! Escolha o que desejar e receba em sua casa de forma rápida e
                             segura.</p>
 
-                        <div>
+                        <div class="wow fadeIn delay-05s">
 
                             <a class="btn btn-yellow mt-4 mr-3" href="#cardapio">Ver Cardápio</a>
 
-                            <a class="btn btn-white btn-icon-left mt-4">
+                            <a class="btn btn-white btn-icon-left mt-4" href="#" id="btnLigar">
 
-                                <span class="icon-left">
-
-                                    <i class="fa fa-phone"></i>
-
-                                </span>
-
-                                559955995
+                               
 
                             </a>
 
@@ -123,26 +117,26 @@
 
                     </div>
 
-                    <a class="btn btn-sm btn-white btn-social mt-4 mr-3" href="#">
+                    <a class="btn btn-sm btn-white btn-social mt-4 mr-3 wow fadeIn delay-07s" href="#">
 
                         <i class="fab fa-instagram"></i>
 
                     </a>
 
-                    <a class="btn btn-sm btn-white btn-social mt-4 mr-3"
+                    <a class="btn btn-sm btn-white btn-social mt-4 mr-3 wow fadeIn delay-07s"
                         href="#">
 
                         <i class="fab fa-facebook"></i>
 
                     </a>
 
-                    <a class="btn btn-sm btn-white btn-social mt-4 mr-3" href="#">
+                    <a id="btnWhatsapp-footer" target="_blank" class="btn btn-sm btn-white btn-social mt-4 mr-3 wow fadeIn delay-07s" href="#">
 
                         <i class="fab fa-whatsapp"></i>
 
                     </a>
 
-                    <a class="btn btn-sm btn-white btn-social mt-4" href="#">
+                    <a class="btn btn-sm btn-white btn-social mt-4 wow fadeIn delay-07s" href="#">
 
                         <i class="fab fa-youtube"></i>
 
@@ -190,7 +184,7 @@
 
             <div class="class row">
 
-                <div class="col-12 text-center mb-5">
+                <div class="col-12 text-center mb-5 wow fadeIn">
 
                     <span class="hint-title"><b>Serviços</b></span>
 
@@ -202,7 +196,7 @@
 
                 </div>
 
-                <div class="col-4 mb-5">
+                <div class="col-4 mb-5 wow fadeInUp">
 
                     <div class="card-icon text-center">
 
@@ -224,7 +218,7 @@
 
                 </div>
 
-                <div class="col-4 mb-5">
+                <div class="col-4 mb-5 wow fadeInUp">
 
                     <div class="card-icon text-center">
 
@@ -246,7 +240,7 @@
 
                 </div>
 
-                <div class="col-4 mb-5">
+                <div class="col-4 mb-5 wow fadeInUp">
 
                     <div class="card-icon text-center">
 
@@ -282,7 +276,7 @@
 
             <div class="row">
 
-                <div class="col-12 text-center mb-5">
+                <div class="col-12 text-center mb-5 wow fadeIn">
 
                     <span class="hint-title"><b>Cardápio</b></span>
 
@@ -294,7 +288,7 @@
 
                 </div>
 
-                <div class="col-12 container-menu">
+                <div class="col-12 container-menu wow fadeInUp">
 
                     <a id="menu-burgers" class="btn btn-white btn-sm mr-3" onclick='cardapio.metodos.obterItensCardapio("burgers")'>
 
@@ -345,7 +339,7 @@
                        
                     </div>
 
-                    <div class="col-12 text-center mt-4" >
+                    <div class="col-12 text-center mt-4 wow fadeInUp" >
 
                         <a id="btnVerMais" name="btnVerMais" onclick='cardapio.metodos.verMais()' class="btn btn-white btn-sm">Ver mais</a>
 
@@ -371,9 +365,9 @@
 
                 <div class="col-5 text-center">
 
-                    <div class="card-depoimentos"></div>
+                    <div class="card-depoimentos wow fadeIn"></div>
 
-                    <div class="d-flex img-banner">
+                    <div class="d-flex img-banner wow fadeInLeft delay-02s">
 
                         <img src="./img/pizzas.png" />
 
@@ -383,9 +377,9 @@
 
                 <div class="col-7">
 
-                    <span class="hint-title"><b>Depoimentos</b></span>
+                    <span class="hint-title wow fadeIn"><b>Depoimentos</b></span>
 
-                    <h1 class="title">
+                    <h1 class="title wow fadeIn">
 
                         <b>O que dizem sobre nós</b>
                     </h1>
@@ -523,11 +517,11 @@
 
                     </div>
 
-                    <a class="btn btn-sm btn-white btn-social mr-3 active">1</a>
+                    <a id="btnDepoimento-1" onclick="cardapio.metodos.abrirDepoimento(1)" class="active btn btn-sm btn-white btn-social mr-3 ">1</a>
 
-                    <a class="btn btn-sm btn-white btn-social mr-3">2</a>
+                    <a id="btnDepoimento-2" onclick="cardapio.metodos.abrirDepoimento(2)" class="btn btn-sm btn-white btn-social mr-3">2</a>
 
-                    <a class="btn btn-sm btn-white btn-social">3</a>
+                    <a id="btnDepoimento-3" onclick="cardapio.metodos.abrirDepoimento(3)" class="btn btn-sm btn-white btn-social">3</a>
 
                 </div>
 
@@ -537,7 +531,7 @@
 
     </section>
 
-    <section class="reserva" id="reserva">
+    <section class="reserva" id="reservas">
 
         <div class="row">
 
@@ -566,7 +560,7 @@
 
                         <div class="botao-reserva">
 
-                            <a class="btn btn-yellow mt-4 mr-3">Fazer reserva</a>
+                            <a class="btn btn-yellow mt-4 mr-3" href="#" id="btnReserva" target="_blank">Fazer reserva</a>
 
                         </div>
 
@@ -631,9 +625,9 @@
 
                     </a>
 
-                    <a class="btn btn-sm btn-white btn-social mt-4">
+                    <a href="#" id="btnWhatsapp" target="_blank" class="btn btn-sm btn-white btn-social mt-4">
 
-                        <i class="fab fa-whatsapp"></i>
+                        <i  class="fab fa-whatsapp"></i>
 
                     </a>
 
@@ -974,7 +968,9 @@
     
     <script type="text/javascript" src="./js/app.js"></script>
 
+    <script type="text/javascript" src="./js/wow.min.js"></script>
 
+    <script>new WOW().init();</script>
 
 </body>
 

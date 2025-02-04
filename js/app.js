@@ -8,13 +8,16 @@ var MEU_CARRINHO = [];
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 10.0;
 var MEU_ENDERECO = [];
-var CELULAR_EMPRESA = "55900000000";
+var CELULAR_EMPRESA = "00000000";
 
 cardapio.eventos = {
 
     init: () => {
         // console.log('iniciou')
         cardapio.metodos.obterItensCardapio();
+        cardapio.metodos.carregarBotaoReserva();
+        cardapio.metodos.carregarBotaoLigar();
+        cardapio.metodos.carregarBotaoWhatsapp();
     }
 }
 
@@ -523,12 +526,52 @@ cardapio.metodos = {
 
         }
 
+    }, 
+
+    carregarBotaoReserva: () => {
+        var texto = 'Olá! gostaria de fazer uma *reserva*';
+
+        let encode = encodeURI(texto);
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+        $("#btnReserva").attr('href', URL);
+
+    },
+
+    carregarBotaoLigar: () => {
+        $("#btnLigar").attr('href', `tel:${CELULAR_EMPRESA}`);
+
+        let content =  "<span class=\"icon-left\"><i class=\"fa fa-phone\"></i></span>" + CELULAR_EMPRESA;
+        $("#btnLigar").html(content);
+    },
+
+    abrirDepoimento: (depoimento) => {
+        $("#depoimento-1").addClass('hidden');
+        $("#depoimento-2").addClass('hidden');
+        $("#depoimento-3").addClass('hidden');
+
+        $("#btnDepoimento-1").removeClass('active');
+        $("#btnDepoimento-2").removeClass('active');
+        $("#btnDepoimento-3").removeClass('active');
+
+        $("#depoimento-" + depoimento).removeClass('hidden');
+        $("#btnDepoimento-" + depoimento).addClass('active');
+       
+    },
+
+    carregarBotaoWhatsapp: () => {
+        var texto = 'Olá! gostaria de fazer um pedido.';
+        let encode = encodeURI(texto);
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+        $("#btnWhatsapp").attr('href', URL);
+        $("#btnWhatsapp-footer").attr('href', URL);
     }
 }
 
 cardapio.templates = {
     item: `
-    <div class="col-3 mb-5">
+    <div class="col-3 mb-5 wow fadeInUp">
         <div class="card card-item" id="\${id}">
         <div class="img-produto">
             <img src="\${img}" />
