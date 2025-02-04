@@ -8,12 +8,12 @@ var MEU_CARRINHO = [];
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 10.0;
 var MEU_ENDERECO = [];
-var CELULAR_EMPRESA = "00000000";
+var CELULAR_EMPRESA = "0000000";
 
 cardapio.eventos = {
 
     init: () => {
-        // console.log('iniciou')
+        
         cardapio.metodos.obterItensCardapio();
         cardapio.metodos.carregarBotaoReserva();
         cardapio.metodos.carregarBotaoLigar();
@@ -297,9 +297,11 @@ cardapio.metodos = {
             $("#itensCarrinho").removeClass('hidden');
             $("#localEntrega").addClass('hidden');
             $("#resumoCarrinho").addClass('hidden');
+           
 
             $(".etapa").removeClass('active');
             $(".etapa1").addClass('active');
+            
 
             $("#btnEtapaPedido").removeClass('hidden');
             $("#btnEtapaEndereco").addClass('hidden');
@@ -312,6 +314,7 @@ cardapio.metodos = {
             $("#itensCarrinho").addClass('hidden');
             $("#localEntrega").removeClass('hidden');
             $("#resumoCarrinho").addClass('hidden');
+            
 
             $(".etapa").removeClass('active');
             $(".etapa1").addClass('active');
@@ -555,7 +558,9 @@ cardapio.metodos = {
         $("#btnDepoimento-3").removeClass('active');
 
         $("#depoimento-" + depoimento).removeClass('hidden');
+        $("#depoimento-" + depoimento).addClass('animated fadeIn');
         $("#btnDepoimento-" + depoimento).addClass('active');
+        
        
     },
 
