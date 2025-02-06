@@ -569,7 +569,7 @@ cardapio.metodos = {
         let encode = encodeURI(texto);
         let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
 
-        $("#btnWhatsapp").attr('href', URL);
+        
         $("#btnWhatsapp-footer").attr('href', URL);
     }
 }

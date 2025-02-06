@@ -25,7 +25,7 @@
 <body>
 
     <div class="container-mensagens" id="container-mensagens">
-    
+
     </div>
 
     <a class="botao-carrinho animate bounceIn hidden" onclick="cardapio.metodos.abrirCarrinho(true)">
@@ -70,10 +70,10 @@
                     </ul>
 
                     <a class="btn btn-white btn-icon wow fadeIn" onclick="cardapio.metodos.abrirCarrinho(true)">
-                       
+
                         Meu carrinho
 
-                        <span class="icon" >
+                        <span class="icon">
                             <div class="container-total-carrinho badge-total-carrinho hidden">0</div>
                             <i class="fas fa-shopping-bag"></i>
 
@@ -99,8 +99,10 @@
 
                     <div class="d-flex text-banner">
 
-                        <h1 class="wow fadeInLeft"><b>Escolha a sua comida <b class="color-primary">favorita.</b></b></h1>
-                        <p class="wow fadeInLeft delay-02s">Aproveite nosso cardápio! Escolha o que desejar e receba em sua casa de forma rápida e
+                        <h1 class="wow fadeInLeft"><b>Escolha a sua comida <b class="color-primary">favorita.</b></b>
+                        </h1>
+                        <p class="wow fadeInLeft delay-02s">Aproveite nosso cardápio! Escolha o que desejar e receba em
+                            sua casa de forma rápida e
                             segura.</p>
 
                         <div class="wow fadeIn delay-05s">
@@ -109,7 +111,7 @@
 
                             <a class="btn btn-white btn-icon-left mt-4" href="#" id="btnLigar">
 
-                               
+
 
                             </a>
 
@@ -123,14 +125,14 @@
 
                     </a>
 
-                    <a class="btn btn-sm btn-white btn-social mt-4 mr-3 wow fadeIn delay-07s"
-                        href="#">
+                    <a class="btn btn-sm btn-white btn-social mt-4 mr-3 wow fadeIn delay-07s" href="#">
 
                         <i class="fab fa-facebook"></i>
 
                     </a>
 
-                    <a id="btnWhatsapp-footer" target="_blank" class="btn btn-sm btn-white btn-social mt-4 mr-3 wow fadeIn delay-07s" href="#">
+                    <a id="btnWhatsapp-footer" target="_blank"
+                        class="btn btn-sm btn-white btn-social mt-4 mr-3 wow fadeIn delay-07s" href="#">
 
                         <i class="fab fa-whatsapp"></i>
 
@@ -290,45 +292,51 @@
 
                 <div class="col-12 container-menu wow fadeInUp">
 
-                    <a id="menu-burgers" class="btn btn-white btn-sm mr-3" onclick='cardapio.metodos.obterItensCardapio("burgers")'>
+                    <a id="menu-burgers" class="btn btn-white btn-sm mr-3"
+                        onclick='cardapio.metodos.obterItensCardapio("burgers")'>
 
                         <i class="fas fa-hamburger"></i>&nbsp;Burguer
 
                     </a>
 
-                    <a id="menu-pizzas" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('pizzas')">
+                    <a id="menu-pizzas" class="btn btn-white btn-sm mr-3"
+                        onclick="cardapio.metodos.obterItensCardapio('pizzas')">
 
                         <i class="fas fa-pizza-slice"></i>&nbsp;Pizzas
 
                     </a>
 
-                    <a id="menu-churrasco" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('churrasco')">
+                    <a id="menu-churrasco" class="btn btn-white btn-sm mr-3"
+                        onclick="cardapio.metodos.obterItensCardapio('churrasco')">
 
                         <i class="fas fa-drumstick-bite"></i>&nbsp;Churrasco
 
                     </a>
 
-                    <a id="menu-steaks" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('steaks')">
+                    <a id="menu-steaks" class="btn btn-white btn-sm mr-3"
+                        onclick="cardapio.metodos.obterItensCardapio('steaks')">
 
                         <i class="fas fa-bacon"></i>&nbsp;Steaks
 
                     </a>
 
-                    <a id="menu-bebidas" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('bebidas')">
+                    <a id="menu-bebidas" class="btn btn-white btn-sm mr-3"
+                        onclick="cardapio.metodos.obterItensCardapio('bebidas')">
 
                         <i class="fas fa-cocktail"></i>&nbsp;Bebidas
 
                     </a>
 
-                    <a id="menu-sobremesas" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('sobremesas')">
+                    <a id="menu-sobremesas" class="btn btn-white btn-sm mr-3"
+                        onclick="cardapio.metodos.obterItensCardapio('sobremesas')">
 
                         <i class="fas fa-ice-cream"></i>&nbsp;Sorvete
 
                     </a>
 
-                    
 
-                        
+
+
 
                 </div>
 
@@ -336,14 +344,15 @@
 
                     <div class="row" id="itensCardapio">
 
-                       
+
                     </div>
 
-                    <div class="col-12 text-center mt-4 wow fadeInUp" >
+                    <div class="col-12 text-center mt-4 wow fadeInUp">
 
-                        <a id="btnVerMais" name="btnVerMais" onclick='cardapio.metodos.verMais()' class="btn btn-white btn-sm">Ver mais</a>
+                        <a id="btnVerMais" name="btnVerMais" onclick='cardapio.metodos.verMais()'
+                            class="btn btn-white btn-sm">Ver mais</a>
 
-                        
+
 
                     </div>
 
@@ -517,11 +526,14 @@
 
                     </div>
 
-                    <a id="btnDepoimento-1" onclick="cardapio.metodos.abrirDepoimento(1)" class="active btn btn-sm btn-white btn-social mr-3 ">1</a>
+                    <a id="btnDepoimento-1" onclick="cardapio.metodos.abrirDepoimento(1)"
+                        class="active btn btn-sm btn-white btn-social mr-3 ">1</a>
 
-                    <a id="btnDepoimento-2" onclick="cardapio.metodos.abrirDepoimento(2)" class="btn btn-sm btn-white btn-social mr-3">2</a>
+                    <a id="btnDepoimento-2" onclick="cardapio.metodos.abrirDepoimento(2)"
+                        class="btn btn-sm btn-white btn-social mr-3">2</a>
 
-                    <a id="btnDepoimento-3" onclick="cardapio.metodos.abrirDepoimento(3)" class="btn btn-sm btn-white btn-social">3</a>
+                    <a id="btnDepoimento-3" onclick="cardapio.metodos.abrirDepoimento(3)"
+                        class="btn btn-sm btn-white btn-social">3</a>
 
                 </div>
 
@@ -560,7 +572,8 @@
 
                         <div class="botao-reserva">
 
-                            <a class="btn btn-yellow mt-4 mr-3 wow fadeIn delay-02s" href="#" id="btnReserva" target="_blank">Fazer reserva</a>
+                            <a class="btn btn-yellow mt-4 mr-3 wow fadeIn delay-02s" href="#" id="btnReserva"
+                                target="_blank">Fazer reserva</a>
 
                         </div>
 
@@ -602,38 +615,28 @@
 
                 <div class="col-6 container-texto-footer">
 
-                    <p class="mb-0">
+                    <p class="mb-0" >
 
-                        <b>Menu On-line</b>&copy; Todos os direitos reservados
+                        <b>Menu On-line</b>&copy;Todos os direitos reservados.
 
                     </p>
 
                 </div>
-
+                
+            
                 <div class="col-3 container-redes-footer wow fadeIn">
 
-                    <a class="btn btn-sm btn-white btn-social mt-4 href="#">
-
-                        <i class="fab fa-instagram"></i>
-
-                    </a>
-
-                    <a class="btn btn-sm btn-white btn-social mt-4"
-                        href="#">
-
-                        <i class="fab fa-facebook"></i>
+                    <a class="btn btn-sm btn-white btn-social mt-4 " data-toggle="modal" data-target="#agradecimento" href="#">
+                        <i class="fab fa-java"></i>
+                        
 
                     </a>
 
-                    <a href="#" id="btnWhatsapp" target="_blank" class="btn btn-sm btn-white btn-social mt-4">
+                    
 
-                        <i  class="fab fa-whatsapp"></i>
-
-                    </a>
-
-                    <a class="btn btn-sm btn-white btn-social mt-4" href="#">
-
-                        <i class="fab fa-youtube"></i>
+                    <a class="btn btn-sm btn-white btn-social mt-4" href="https://github.com/apc-64" target="_blank">
+                        <i class="fab fa-github"></i>
+                       
 
                     </a>
 
@@ -641,13 +644,37 @@
 
             </div>
 
+
+
         </div>
 
     </section>
 
 
 
-    
+   
+
+    <div class="modal fade" id="agradecimento" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Agradecimentos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Este site foi feito com muito carinho e dedicação em sala de aula com a ajuda do professor <a href="https://github.com/cleberfeitosa"  target="_blank">Cleber Feitosa</a>. Meus agradecimentos pelo conhecimento compartilhado e pelos momentos vividos. Obrigado!
+                </div>
+                <div class="modal-footer">
+                    At.te, Adriano Priebe Ciqueira - fev, 2025.
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
     <div class="modal-full  hidden" id="modalCarrinho">
 
         <div class="m-header">
@@ -682,7 +709,7 @@
             <div class="container">
 
                 <div id="itensCarrinho" class="row mr-0 ml-0">
-                   
+
                 </div>
 
                 <div id="localEntrega" class="row mr-0 ml-0 animate fadeIn hidden">
@@ -777,7 +804,7 @@
 
                                 <label>UF:</label>
 
-                                <select  class="form-control" id="ddlUf">
+                                <select class="form-control" id="ddlUf">
                                     <option value="">--</option>
                                     <option value="AC">AC</option>
                                     <option value="AL">AL</option>
@@ -815,12 +842,12 @@
 
                     </div>
 
-                    
+
 
                 </div>
 
-                <div id="resumoCarrinho"  class="row mr-0 ml-0  hidden">
-                        
+                <div id="resumoCarrinho" class="row mr-0 ml-0  hidden">
+
                     <div class="col-12">
 
                         <p class="title-carrinho mt-4">
@@ -865,7 +892,7 @@
 
                             </div> -->
 
-                            
+
 
                         </div>
 
@@ -889,17 +916,17 @@
 
                         <div class="dados-produto">
                             <p class="dados-produto">
-                                <p class="texto-endereco">
-                                    <b id="resumoEndereco"></b>
-                                </p>
-                            
-                                <p class="cidade-endereco" id="cidadeEndereco">
-                                </p>
-                                </p>
+                            <p class="texto-endereco">
+                                <b id="resumoEndereco"></b>
+                            </p>
+
+                            <p class="cidade-endereco" id="cidadeEndereco">
+                            </p>
+                            </p>
                             </p>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -936,17 +963,21 @@
 
                     <span class="valor-total" id="lblValorTotal"><b></b></span>
 
-                 
+
 
                 </div>
 
-                <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-yellow float-right" id="btnEtapaPedido">Continuar</a>
+                <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-yellow float-right"
+                    id="btnEtapaPedido">Continuar</a>
 
-                <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco"   >Revisar Pedido</a>
+                <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right hidden"
+                    id="btnEtapaEndereco">Revisar Pedido</a>
 
-                <a class="btn btn-yellow float-right hidden" href="#" id="btnEtapaResumo" target="_blank">Enviar Pedido</a>
+                <a class="btn btn-yellow float-right hidden" href="#" id="btnEtapaResumo" target="_blank">Enviar
+                    Pedido</a>
 
-                <a onclick="cardapio.metodos.voltarEtapa()" class="btn btn-white float-right mr-3 hidden" id="btnVoltar">Voltar</a>
+                <a onclick="cardapio.metodos.voltarEtapa()" class="btn btn-white float-right mr-3 hidden"
+                    id="btnVoltar">Voltar</a>
 
             </div>
 
@@ -954,7 +985,7 @@
 
     </div>
 
-    
+
 
     <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
 
@@ -965,7 +996,7 @@
     <script type="text/javascript" src="./js/popper.min.js"></script>
 
     <script type="text/javascript" src="./js/dados.js"></script>
-    
+
     <script type="text/javascript" src="./js/app.js"></script>
 
     <script type="text/javascript" src="./js/wow.min.js"></script>
