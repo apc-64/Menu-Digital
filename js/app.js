@@ -8,7 +8,7 @@ var MEU_CARRINHO = [];
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 10.0;
 var MEU_ENDERECO = [];
-var CELULAR_EMPRESA = "00000000";
+var CELULAR_EMPRESA = "+5511976938324";
 
 cardapio.eventos = {
 
@@ -576,7 +576,7 @@ cardapio.metodos = {
 
 cardapio.templates = {
     item: `
-    <div class="col-3 mb-5 wow fadeInUp">
+    <div class="col-12 col-lg-3 col-md-3 col-sm-6 mb-5 animated fadeInUp">
         <div class="card card-item" id="\${id}">
         <div class="img-produto">
             <img src="\${img}" />
@@ -623,7 +623,7 @@ cardapio.templates = {
 
             <span class="btn-mais" onclick="cardapio.metodos.aumentarQuantidadeCarrinho('\${id}')"><i class="fas fa-plus"></i></span>
 
-            <span class="btn btn-remove" onclick="cardapio.metodos.removerItemCarrinho('\${id}')"><i class="fa fa-times"></i></span>
+            <span class="btn btn-remove no-mobile" onclick="cardapio.metodos.removerItemCarrinho('\${id}')"><i class="fa fa-times"></i></span>
 
         </div>
 

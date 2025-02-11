@@ -17,6 +17,8 @@
 /* Tablets e Celulares (col) 0px a 767px */
 @media (max-width: 767px) {
 
+
+
     .no-mobile {
         display: none!important;
     }
